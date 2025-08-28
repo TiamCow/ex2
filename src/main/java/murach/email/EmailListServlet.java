@@ -13,6 +13,8 @@ public class EmailListServlet extends HttpServlet  {
     protected void doPost(HttpServletRequest request, 
                           HttpServletResponse response) 
                           throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html; charset=UTF-8");
 
         String url = "/index.html";
 
@@ -53,8 +55,7 @@ public class EmailListServlet extends HttpServlet  {
 
             // set User object in request
             request.setAttribute("user", user);
-            request.setCharacterEncoding("UTF-8");
-            response.setContentType("text/html; charset=UTF-8");
+            
             url = "/thanks.jsp";   // the "thanks" page
         }
         
@@ -71,4 +72,5 @@ public class EmailListServlet extends HttpServlet  {
         doPost(request, response);
     }    
 }
+
 
